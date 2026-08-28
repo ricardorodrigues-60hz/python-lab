@@ -1,3 +1,3 @@
-# ConsolidandoConhecimentoPython&Java
+# Lab de Python para consolidação de conhecimento.
 
-    Relembrando alguns conceitos sobre POO e DSA
+DSA; Package Managers, etc..
