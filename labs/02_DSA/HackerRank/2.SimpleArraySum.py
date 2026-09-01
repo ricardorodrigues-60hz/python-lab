@@ -13,10 +13,11 @@ import sys
 
 def simpleArraySum(ar):
     # Write your code here
-    for i in ar:
-        sum = int(0)
-        sum += i
-    return sum
+    # for i in ar:
+    #     sum = int(0)
+    #     sum += i
+    # return sum
+    return sum(ar)
         
 
 if __name__ == '__main__':
