@@ -29,5 +29,15 @@ Pop the integer on the top of the stack. s = [1].
 Read 3 from the stream and push it to the stack. s = [1,3].
 """
 
+def buildArray(target: List[int], n: int) -> List[str]:
+    set(target)
+    print(set(target))
+    for i in range(n):
+        print(i)
+
+    return
+
+buildArray([1,3], 3)
+
 
 
