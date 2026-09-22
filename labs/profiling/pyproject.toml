@@ -8,6 +8,10 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "eliot>=1.18.0",
+    "eliot-tree>=24.0.0",
+    "gprof2dot>=2025.4.14",
+    "matplotlib>=3.11.2",
     "memory-profiler>=0.61.0",
 ]
 

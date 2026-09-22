@@ -6,7 +6,7 @@ to_file(open('eliot.log', 'w'))
 
 @log_call
 def palavras(split=False):
-    with open('br-utf8.txt') as file:
+    with open('br-utf8.txt', 'r', encoding='utf-8') as file:
         if split:
             text = file.read().split('\n')
         else:

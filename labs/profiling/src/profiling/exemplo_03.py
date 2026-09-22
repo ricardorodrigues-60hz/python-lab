@@ -30,4 +30,4 @@ del b
 sleep(3)
 d = carregar_arquivo()
 
-# e = join(c, d)
+e = join(c, d)

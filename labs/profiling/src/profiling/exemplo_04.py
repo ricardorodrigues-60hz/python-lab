@@ -24,6 +24,6 @@ conta(1, 2, 3)
 # Fim do miolo
 
 # prof.disable()
-
 # stats = pstats.Stats(prof).sort_stats('ncalls')
+
 # stats.print_stats()
