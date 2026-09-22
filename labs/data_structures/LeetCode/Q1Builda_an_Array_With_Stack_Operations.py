@@ -33,11 +33,12 @@ def buildArray(target: list[int], n: int) -> list[str]:
     ans = []
     target_set = set(target)
     max_num = target[-1]
-    print(max_num)
 
-    for num in range(1, max_num + 1):
-        ...
-
+    for num in range(1, max_num ):
+        # print(num)
+        for numset in target_set:
+            print(numset)
+            print('\n')
     return ans
 
 buildArray([1,3],3)
