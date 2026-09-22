@@ -3,7 +3,7 @@ from time import sleep
 
 @profile
 def carregar_arquivo():
-    with open('br-utf8.txt') as file:
+    with open('br-utf8.txt', 'r', encoding='utf-8') as file:
         conteudo = file.read()
 
     return conteudo
@@ -11,7 +11,7 @@ def carregar_arquivo():
 
 @profile
 def carregar_arquivo_em_lista():
-    with open('br-utf8.txt') as file:
+    with open('br-utf8.txt', 'r', encoding='utf-8') as file:
         conteudo = file.readlines()
 
     return conteudo
@@ -23,11 +23,11 @@ def join(a, b):
 
 
 a = carregar_arquivo()
-# b = carregar_arquivo_em_lista()
-# sleep(3)
-# c = carregar_arquivo_em_lista()
-# del b
-# sleep(3)
-# d = carregar_arquivo()
+b = carregar_arquivo_em_lista()
+sleep(3)
+c = carregar_arquivo_em_lista()
+del b
+sleep(3)
+d = carregar_arquivo()
 
 # e = join(c, d)
