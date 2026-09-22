@@ -23,11 +23,11 @@ def join(a, b):
 
 
 a = carregar_arquivo()
-b = carregar_arquivo_em_lista()
-sleep(3)
-c = carregar_arquivo_em_lista()
-del b
-sleep(3)
-d = carregar_arquivo()
+# b = carregar_arquivo_em_lista()
+# sleep(3)
+# c = carregar_arquivo_em_lista()
+# del b
+# sleep(3)
+# d = carregar_arquivo()
 
-e = join(c, d)
+# e = join(c, d)
