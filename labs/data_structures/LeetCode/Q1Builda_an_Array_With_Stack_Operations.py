@@ -31,14 +31,17 @@ Read 3 from the stream and push it to the stack. s = [1,3].
 
 def buildArray(target: list[int], n: int) -> list[str]:
     ans = []
-    target_set = set(target)
-    max_num = target[-1]
-
-    for num in range(1, max_num ):
-        # print(num)
-        for numset in target_set:
-            print(numset)
-            print('\n')
+    target_idx = 0
+    for num in range(1, n + 1):
+        print(num)
+        if target_idx == len(target):
+            break
+        ans.append('Push')
+        if num == target[target_idx]:
+            target_idx += 1
+        else:
+            ans.append('Pop')
+        print(target_idx)
     return ans
 
-buildArray([1,3],3)
+print(buildArray([1,3],3))
