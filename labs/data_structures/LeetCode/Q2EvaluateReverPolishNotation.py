@@ -36,4 +36,34 @@ Explanation: ((10 * (6 / ((9 + 3) * -11))) + 17) + 5
 = 22
 """
 def evalRPN(tokens: list[str]) -> int:
-    ...
+    stack = []
+    for token in tokens:
+        if token == '+':
+            print(stack)
+            stack.append(stack.pop() + stack.pop())
+            print(stack)
+        elif token == '-':
+            print(stack)
+            a, b = stack.pop(), stack.pop()
+            print(stack)
+            stack.append(b - a)
+            print(stack)
+        elif token == '*':
+            print(stack)
+            stack.append(stack.pop() * stack.pop())
+            print(stack)
+        elif token == '/':
+            a, b = stack.pop(), stack.pop()
+            print(stack)
+            stack.append(int(b / a))
+            print(stack)       
+        else:
+            print(stack)
+            stack.append(int(token))
+            print(stack)
+        
+    return stack[0]
+
+
+tokens = ["2","1","+","3","*"]
+print(evalRPN(tokens))
