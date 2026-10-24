@@ -45,3 +45,5 @@ Function 0 resumes execution at the beginning of time 7 and executes for 1 unit 
 So function 0 spends 2 + 4 + 1 = 7 units of total time executing, and function 1 spends 1 unit of total time executing.
 """
 def exclusiveTime(n: int, logs: list[str]) -> list[int]:
+    ...
+    
