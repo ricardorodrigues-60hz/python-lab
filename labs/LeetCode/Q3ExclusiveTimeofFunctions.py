@@ -17,7 +17,7 @@ Example 1:
 Input: n = 2, logs = ["0:start:0","1:start:2","1:end:5","0:end:6"]
 Output: [3,4]
 Explanation:
-Function 0 starts at the beginning of time 0, then it executes 2 for units of time and reaches the end of time 1.
+Function 0 starts at the inning of time 0, then it executes 2 for units of time and reaches the end of time 1.
 Function 1 starts at the beginning of time 2, executes for 4 units of time, and ends at the end of time 5.
 Function 0 resumes execution at the beginning of time 6 and executes for 1 unit of time.
 So function 0 spends 2 + 1 = 3 units of total time executing, and function 1 spends 4 units of total time executing.
@@ -45,5 +45,10 @@ Function 0 resumes execution at the beginning of time 7 and executes for 1 unit 
 So function 0 spends 2 + 4 + 1 = 7 units of total time executing, and function 1 spends 1 unit of total time executing.
 """
 def exclusiveTime(n: int, logs: list[str]) -> list[int]:
+<<<<<<< HEAD:labs/data_structures/LeetCode/Q3ExclusiveTimeofFunctions.py
     ...
     
+=======
+    """Não Tanquei essa Questão. Pulei"""
+    ...
+>>>>>>> a3921bc1a494e9e90799fd737e69de3ab7a17edb:labs/LeetCode/Q3ExclusiveTimeofFunctions.py
