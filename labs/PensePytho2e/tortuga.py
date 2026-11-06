@@ -1,10 +1,45 @@
+from abc import abstractmethod, abstractclassmethod, ABC
 import turtle
 import math
 
-def quadrado(t, tamanho):
-    for i in range(4):
-        t.fd(tamanho)
-        t.lt(90)
+
+class FormaGeometrica(ABC):
+    
+    def __init__(self, tamanho:int, lados, angulo):
+        self.tamanho = tamanho
+        self.lados = lados
+        self.angulo = angulo
+
+
+    @abstractmethod
+    def desenhar(self):
+        """
+        Toda classe que estender FormaGeometrica
+        sera obrigada a implementar este método
+        """
+
+        pass
+
+class Quadrado(FormaGeometrica):
+    lados:int = 4
+    angulo:int = 90
+
+    def __init__(self, tamanho):
+        
+        super().__init__(tamanho=tamanho, lados=Quadrado.lados, angulo=Quadrado.angulo)
+
+
+    def desenhar(self):
+        
+        t = turtle.Turtle()
+        t.speed(3)
+
+        for _ in range(self.lados):
+
+            t.fd(self.tamanho)
+            t.lt(self.angulo)
+
+        turtle.done()
 
 
 def circulo(t, raio: int):
