@@ -5,16 +5,14 @@ import math
 
 class FormaGeometrica(ABC):
     
-    def __init__(self, tamanho:int, lados:int, angulo:int, x:int, y:int):
+    def __init__(self, tamanho:int, lados:int, angulo:int):
         self.tamanho = tamanho
         self.lados = lados
         self.angulo = angulo
-        self.x = x
-        self.y = y
 
 
     @abstractmethod
-    def desenhar(self, x, y):
+    def desenhar(self):
         """
         Toda classe que estender FormaGeometrica
         sera obrigada a implementar este método
@@ -26,12 +24,12 @@ class Quadrado(FormaGeometrica):
     lados:int = 4
     angulo:int = 90
 
-    def __init__(self, tamanho, x, y):
+    def __init__(self, tamanho):
         
-        super().__init__(tamanho=tamanho, lados=Quadrado.lados, angulo=Quadrado.angulo, x=x, y=y)
+        super().__init__(tamanho=tamanho, lados=Quadrado.lados, angulo=Quadrado.angulo)
 
 
-    def desenhar(self, x, y):
+    def desenhar(self):
         
         t = turtle.Turtle()
         t.speed(3)
@@ -45,39 +43,36 @@ class Quadrado(FormaGeometrica):
 
 class Cubo(Quadrado):
     def __init__(self, tamanho, x, y):
+        self.x = x
+        self.y = y
         # Chama o construtor do Quadrado, herdando tamanho, lados e angulo
-        super().__init__(tamanho, x, y)
+        super().__init__(tamanho)
 
     def teleporta(self, t, x: int, y: int):
-        """Sua funcao original adaptada como metodo."""
         t.teleport(x, y)
 
     def tracejado_reto(self, t, angulo: int, tamanho: int):
-        """Sua funcao original adaptada usando a tartaruga do parametro."""
-        t.left(angulo)  # lt
-        t.forward(tamanho)  # fd
+        t.lt(angulo)  
+        t.fd(tamanho)  
 
-    def desenhar(self, x, y):
+    def desenhar(self):
 
         bob = turtle.Turtle()
         bob.speed(3)
         
-        deslocamento = self.tamanho // 2 
+        # deslocamento = self.tamanho // 2 
 
-        # 1. Desenha a primeira face na posição base da instância
+        for _ in range(self.lados):
+            bob.forward(self.tamanho)
+            bob.right(self.angulo)
+
         bob.teleport(self.x, self.y)
         for _ in range(self.lados):
             bob.forward(self.tamanho)
             bob.right(self.angulo)
 
-        # 2. Desenha a segunda face deslocada
-        bob.teleport(self.x + deslocamento, self.y + deslocamento)
-        for _ in range(self.lados):
-            bob.forward(self.tamanho)
-            bob.right(self.angulo)
-
         # 3. Executa as suas 4 retas originais utilizando os metodos da classe
-        self.teleporta(bob, x + deslocamento, y + (self.tamanho + deslocamento))
+        self.teleporta(bob, x + 50, y + (self.tamanho + deslocamento))
         self.tracejado_reto(bob, 225, deslocamento + 25)
 
         self.teleporta(bob, x + deslocamento, y + deslocamento)
@@ -94,7 +89,7 @@ class Cubo(Quadrado):
 # --- Executando o codigo ---
 # Instanciamos o Cubo herdando a logica de tamanho
 meu_cubo = Cubo(tamanho=100, x=0, y=0)
-meu_cubo.desenhar(x=0, y=0)
+meu_cubo.desenhar()
 
 def circulo(t, raio: int):
     t.circle(radius=raio)
