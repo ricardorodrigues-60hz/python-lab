@@ -45,7 +45,7 @@ class Cubo(Quadrado):
     def __init__(self, tamanho, x, y):
         self.x = x
         self.y = y
-        # Chama o construtor do Quadrado, herdando tamanho, lados e angulo
+       
         super().__init__(tamanho)
 
     def teleporta(self, t, x: int, y: int):
@@ -60,8 +60,6 @@ class Cubo(Quadrado):
         bob = turtle.Turtle()
         bob.speed(3)
         
-        # deslocamento = self.tamanho // 2 
-
         for _ in range(self.lados):
             bob.forward(self.tamanho)
             bob.right(self.angulo)
@@ -71,23 +69,9 @@ class Cubo(Quadrado):
             bob.forward(self.tamanho)
             bob.right(self.angulo)
 
-        # 3. Executa as suas 4 retas originais utilizando os metodos da classe
-        self.teleporta(bob, x + 50, y + (self.tamanho + deslocamento))
-        self.tracejado_reto(bob, 225, deslocamento + 25)
-
-        self.teleporta(bob, x + deslocamento, y + deslocamento)
-        self.tracejado_reto(bob, 0, deslocamento + 25)
-
-        self.teleporta(bob, x + (self.tamanho + deslocamento), y + deslocamento)
-        self.tracejado_reto(bob, 0, deslocamento + 25)
-
-        self.teleporta(bob, x + (self.tamanho + deslocamento), y + (self.tamanho + deslocamento))
-        self.tracejado_reto(bob, 0, deslocamento + 25)
 
         turtle.done()
 
-# --- Executando o codigo ---
-# Instanciamos o Cubo herdando a logica de tamanho
 meu_cubo = Cubo(tamanho=100, x=0, y=0)
 meu_cubo.desenhar()
 
