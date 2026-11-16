@@ -28,6 +28,14 @@ Output: [9,0,1,6]
 """
 
 def finalPrices(prices: list[int]) -> list[int]:
-    
-    
-    ...
+    stack = []
+    for i, item in enumerate(prices):
+        while stack and prices[stack[-1]] >= item:
+            prices[stack.pop()] -= item
+        stack.append(i)
+    return prices
+        
+
+print(finalPrices(prices=[8,4,6,2,3]))
+print(finalPrices(prices=[1,2,3,4,5]))
+print(finalPrices(prices=[10,1,1,6]))
